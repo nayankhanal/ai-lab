@@ -15,11 +15,9 @@ likes(manjil, F)  :- tasty(F).
 likes(swapnil, F) :- spicy(F), tasty(F).
 likes(niraj, F)   :- spicy(F) ; tasty(F).
 
-main :-
-    ( tasty(fruits) -> A = yes ; A = no ), format("a. Are fruits tasty? ~w~n", [A]),
-    findall(F, tasty(F), T),            format("b. Tasty foods:  ~w~n", [T]),
-    findall(F, likes(manjil, F), M),    format("c. Manjil likes: ~w~n", [M]),
-    findall(F, likes(swapnil, F), S),   format("d. Swapnil likes: ~w~n", [S]),
-    setof(F, likes(niraj, F), N),       format("e. Niraj likes:  ~w~n", [N]).
-
-:- initialization(main, main).
+% Queries:
+% ?- tasty(fruits).
+% ?- findall(F, tasty(F), L).
+% ?- findall(F, likes(manjil, F), L).
+% ?- findall(F, likes(swapnil, F), L).
+% ?- setof(F, likes(niraj, F), L).

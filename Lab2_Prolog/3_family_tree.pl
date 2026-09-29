@@ -18,11 +18,9 @@ parent(james, shekhar). parent(shweta, shekhar).
 mother(M, C)      :- parent(M, C), female(M).
 grandmother(G, C) :- parent(G, P), parent(P, C), female(G).
 
-main :-
-    findall(M, mother(M, shweta), L1),       format("Mother of Shweta:      ~w~n", [L1]),
-    findall(G, grandmother(G, shekhar), L2), format("Grandmother of Shekhar: ~w~n", [L2]),
-    findall(P, parent(P, james), L3),        format("Parents of James:      ~w~n", [L3]),
-    findall(P, parent(P, anu), L4),          format("Parents of Anu:        ~w~n", [L4]),
-    findall(P, parent(P, simon), L5),        format("Parents of Simon:      ~w~n", [L5]).
-
-:- initialization(main, main).
+% Queries:
+% ?- findall(M, mother(M, shweta), L).
+% ?- findall(G, grandmother(G, shekhar), L).
+% ?- findall(P, parent(P, james), L).
+% ?- findall(P, parent(P, anu), L).
+% ?- findall(P, parent(P, simon), L).

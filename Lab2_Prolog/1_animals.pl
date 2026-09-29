@@ -13,11 +13,11 @@ eats(bear, meat).
 carnivorous(X) :- eats(X, meat), \+ eats(X, grass).
 omnivorous(X)  :- eats(X, meat), eats(X, grass).
 
-main :-
-    ( carnivorous(tiger) -> R1 = yes ; R1 = no ), format("Is tiger carnivorous? ~w~n", [R1]),
-    ( omnivorous(bear)   -> R2 = yes ; R2 = no ), format("Is bear omnivorous?   ~w~n", [R2]),
-    ( carnivorous(deer)  -> R3 = yes ; R3 = no ), format("Is deer carnivorous?  ~w~n", [R3]),
-    findall(X, carnivorous(X), C), format("Carnivorous animals: ~w~n", [C]),
-    findall(X, omnivorous(X), O),  format("Omnivorous animals:  ~w~n", [O]).
-
-:- initialization(main, main).
+% Queries:
+% ?- carnivorous(tiger).
+% ?- carnivorous(lion).
+% ?- carnivorous(deer).
+% ?- omnivorous(bear).
+% ?- carnivorous(bear).
+% ?- findall(X, carnivorous(X), L).
+% ?- findall(X, omnivorous(X), L).

@@ -29,10 +29,37 @@ show(Rel, Person) :-
     findall(X, Goal, L0), sort(L0, L),
     format("~w of ~w: ~w~n", [Rel, Person, L]).
 
-main :-
-    forall(member(P, [bob, liz, ann, pat, jim, peter]),
-           ( forall(member(R, [father, mother, brother, sister]), show(R, P)), nl )),
-    forall(member(P, [jim, ann, peter]),
-           ( forall(member(R, [grandparent, grandfather, grandmother]), show(R, P)), nl )).
-
-:- initialization(main, main).
+% Queries:
+% ?- findall(X, brother(X, bob), L).
+% ?- findall(X, sister(X, bob), L).
+% ?- findall(X, father(X, bob), L).
+% ?- findall(X, mother(X, bob), L).
+% ?- findall(X, brother(X, liz), L).
+% ?- findall(X, sister(X, liz), L).
+% ?- findall(X, father(X, liz), L).
+% ?- findall(X, mother(X, liz), L).
+% ?- findall(X, brother(X, ann), L).
+% ?- findall(X, sister(X, ann), L).
+% ?- findall(X, father(X, ann), L).
+% ?- findall(X, mother(X, ann), L).
+% ?- findall(X, brother(X, pat), L).
+% ?- findall(X, sister(X, pat), L).
+% ?- findall(X, father(X, pat), L).
+% ?- findall(X, mother(X, pat), L).
+% ?- findall(X, brother(X, jim), L).
+% ?- findall(X, sister(X, jim), L).
+% ?- findall(X, father(X, jim), L).
+% ?- findall(X, mother(X, jim), L).
+% ?- findall(X, brother(X, peter), L).
+% ?- findall(X, sister(X, peter), L).
+% ?- findall(X, father(X, peter), L).
+% ?- findall(X, mother(X, peter), L).
+% ?- setof(X, grandparent(X, jim), L).
+% ?- setof(X, grandfather(X, jim), L).
+% ?- setof(X, grandmother(X, jim), L).
+% ?- setof(X, grandparent(X, ann), L).
+% ?- setof(X, grandfather(X, ann), L).
+% ?- setof(X, grandmother(X, ann), L).
+% ?- setof(X, grandparent(X, peter), L).
+% ?- setof(X, grandfather(X, peter), L).
+% ?- setof(X, grandmother(X, peter), L).

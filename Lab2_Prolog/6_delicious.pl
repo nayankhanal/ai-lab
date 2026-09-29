@@ -17,11 +17,9 @@ relishes(meera, coffee).
 likes(ram, F)  :- delicious(F).
 likes(sita, F) :- delicious(F), spicy(F).
 
-main :-
-    findall(F, delicious(F), D),   format("a. Delicious foods:  ~w~n", [D]),
-    findall(F, likes(ram, F), R),  format("b. Ram likes:        ~w~n", [R]),
-    findall(F, likes(sita, F), S), format("c. Sita likes:       ~w~n", [S]),
-    ( delicious(rice) -> A = yes ; A = no ), format("d. Is rice delicious? ~w~n", [A]),
-    findall(P, relishes(P, coffee), C), format("e. Relishes coffee: ~w~n", [C]).
-
-:- initialization(main, main).
+% Queries:
+% ?- findall(F, delicious(F), L).
+% ?- findall(F, likes(ram, F), L).
+% ?- findall(F, likes(sita, F), L).
+% ?- delicious(rice).
+% ?- relishes(X, coffee).

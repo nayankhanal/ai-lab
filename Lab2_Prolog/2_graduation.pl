@@ -7,8 +7,6 @@ graduating(ram).
 happy(X) :- graduating(X).
 smiles(X) :- happy(X).
 
-main :-
-    ( smiles(ram) -> R1 = yes ; R1 = no ), format("Is Ram smiling? ~w~n", [R1]),
-    ( happy(ram)  -> R2 = yes ; R2 = no ), format("Is Ram happy?   ~w~n", [R2]).
-
-:- initialization(main, main).
+% Queries:
+% ?- smiles(ram).
+% ?- happy(ram).
